@@ -45,24 +45,40 @@ app.get("/", (req, res) => {
 
 app.get("/setup", (req, res) => {
     
+    // Step 1
+
+    // let sql = "CREATE DATABASE typingtestDB";
+    // db.query(sql, (err, result) => {
+    //     if(err) throw err;
+    //     res.send("Created Database");
+    // })
+
+
+
+    // Step 2
+
     // let sql = "CREATE TABLE words (id int AUTO_INCREMENT, word VARCHAR(255), PRIMARY KEY(id))";
     // db.query(sql, (err, result) => {
     //     if(err) throw err;
-    //     res.send("Success");
+    //     res.send("Created Table");
     // })
 
-    let sql = "INSERT INTO words (word) VALUES ?";
-    fs.readFile("words.txt", "utf-8", (err, data) => {
-        if (err) throw err;
-        let words = data.split(/\r\n/);
-        let nestedWords = words.map(word => {
-            return [word]
-        });
-        db.query(sql, [nestedWords], (err, result) => {
-        if(err) throw err;
-        res.send("Inserted data");
-        });
-    });
+
+
+    // Step 3
+
+    // let sql = "INSERT INTO words (word) VALUES ?";
+    // fs.readFile("words.txt", "utf-8", (err, data) => {
+    //     if (err) throw err;
+    //     let words = data.split(/\r\n/);
+    //     let nestedWords = words.map(word => {
+    //         return [word]
+    //     });
+    //     db.query(sql, [nestedWords], (err, result) => {
+    //     if(err) throw err;
+    //     res.send("Inserted data");
+    //     });
+    // });
 });
 
 app.listen(3000, () => {

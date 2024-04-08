@@ -1,0 +1,29 @@
+Hey prof! This is how to run the project on your device!
+
+Dependencies:
+npm i express ejs nodemon node mysql fs chai mocha
+
+Other things needed to be installed:
+- XAMPP: Apache and MySQL handler
+- MySQL
+
+To start the project:
+npm run start
+
+To initially setup the database of words we need for the game to run:
+1. Go to server.js
+2. Comment out line 9 (we will uncomment it later)
+3. Uncomment the code block under step 1
+4. Run the game using npm run start and in your browser go to localhost:3000/setup
+5. Once it says Created database, go back to server.js
+6. Uncomment line 9 (we need this now!)
+7. Comment out the code block under step 1 and uncomment the code block under step 2
+8. Repeat step 4 and 5 (This time it should say Created Table instead)
+9. For the last part, comment out the code block under step 2 and uncomment the code block under step 3
+10. Repeat step 4 and 5 again (This time it should say Inserted data instead)
+
+The database is now set up. You can now enjoy the game by going to localhost:3000/
+
+Have fun :)
+
+~ by Gurnoor
