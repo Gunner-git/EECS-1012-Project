@@ -43,27 +43,27 @@ app.get("/", (req, res) => {
     })
 })
 
-// app.get("/setup", (req, res) => {
+app.get("/setup", (req, res) => {
     
-//     // let sql = "CREATE TABLE words (id int AUTO_INCREMENT, word VARCHAR(255), PRIMARY KEY(id))";
-//     // db.query(sql, (err, result) => {
-//     //     if(err) throw err;
-//     //     res.send("Success");
-//     // })
+    // let sql = "CREATE TABLE words (id int AUTO_INCREMENT, word VARCHAR(255), PRIMARY KEY(id))";
+    // db.query(sql, (err, result) => {
+    //     if(err) throw err;
+    //     res.send("Success");
+    // })
 
-//     let sql = "INSERT INTO words (word) VALUES ?";
-//     fs.readFile("words.txt", "utf-8", (err, data) => {
-//         if (err) throw err;
-//         let words = data.split(/\r\n/);
-//         let nestedWords = words.map(word => {
-//             return [word]
-//         });
-//         db.query(sql, [nestedWords], (err, result) => {
-//         if(err) throw err;
-//         res.send("Inserted data");
-//         });
-//     });
-// });
+    let sql = "INSERT INTO words (word) VALUES ?";
+    fs.readFile("words.txt", "utf-8", (err, data) => {
+        if (err) throw err;
+        let words = data.split(/\r\n/);
+        let nestedWords = words.map(word => {
+            return [word]
+        });
+        db.query(sql, [nestedWords], (err, result) => {
+        if(err) throw err;
+        res.send("Inserted data");
+        });
+    });
+});
 
 app.listen(3000, () => {
     console.log("Server has started on PORT 3000");
