@@ -9,10 +9,14 @@
 <body>
         <section id="timer">1:00</section>
         <section id="tester">
-            <div id="tester-text"></div>
+            <div id="tester-text">
+                <% wordStore.forEach(word => { %>
+                    <span> <%-word %></span>
+                <% }); %>
+            </div>
         </section>
         <form>
-            <input type="text" id="write"/>
+            <input onkeyup="inputType(this)" onfocus="onFocus()" onblur="onBlur()" type="text" id="write"/>
         </form>
 
         <section id="score">
