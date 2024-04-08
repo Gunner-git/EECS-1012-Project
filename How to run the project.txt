@@ -8,7 +8,10 @@ Other things needed to be installed:
 - MySQL
 
 To start the project:
-npm run start
+1. On XAMPP, start Apache and MySQL
+NOTE: If MySQL doesn't start, go to task manager and end the mysqld task and then start it from XAMPP. It should work now.
+
+2. execute npm run start in your terminal
 
 To initially setup the database of words we need for the game to run:
 1. Go to server.js
