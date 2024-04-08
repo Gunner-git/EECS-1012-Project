@@ -31,8 +31,6 @@ function selectThisWord(currentWordNumber, wordStore) {
 
  function shouldUserScore(userInput, prevWord) {
     let textValue = prevWord.textContent;
-    console.log(userInput);
-    console.log(textValue);
     textValue = textValue.slice(1);
     if(userInput == textValue) {
         prevWord.style.color = "green";
